@@ -848,6 +848,6 @@ if ('serviceWorker' in navigator) {
 // CONSOLE MESSAGE
 // ============================================
 
-console.log('%cRoom Rent - Premium Room Rental Service', 'font-size: 20px; font-weight: bold; color: #2D5F4F;');
-console.log('%c📞 Call: 0335-2838-794 | 💬 WhatsApp: https://wa.me/923352838794', 'font-size: 14px; color: #5FA694;');
+console.log('%cRoom Rent - Premium Room Rental Service', 'font-size: 20px; font-weight: bold; color: #2578bb;');
+console.log('%c📞 Call: 0335-2838-794 | 💬 WhatsApp: https://wa.me/923352838794', 'font-size: 14px; color: #6ea5db;');
 console.log('%cBuilt with vanilla HTML, CSS, and JavaScript', 'font-size: 12px; color: #999;');

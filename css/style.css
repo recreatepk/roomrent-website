@@ -5,18 +5,23 @@
 
 :root {
     /* Brand Colors - Inspired by Room Rent logo */
-    --primary-color: #2D5F4F;      /* Deep teal/green */
-    --secondary-color: #5FA694;    /* Medium teal */
+    /*--primary-color: #2D5F4F;      /* Deep teal/green */
+    /*--secondary-color: #5FA694;    /* Medium teal */
+    --primary-color: #2578bb;      /* Deep teal/green */
+    --secondary-color: #6ea5db;    /* Medium teal */
     --accent-color: #F4A259;       /* Warm orange accent */
     --light-bg: #F8FAF9;           /* Very light background */
-    --light-accent: #E8F4F0;       /* Light teal for accents */
-    --text-dark: #1A2F2B;          /* Dark text */
-    --text-light: #6B8B85;         /* Light gray text */
-    --border-color: #D4E4DE;       /* Subtle borders */
+    --light-accent: #e4ebf2;       /* Light teal for accents */
+    --text-dark: #18222b;          /* Dark text */
+    --text-light: #6d7f8f;         /* Light gray text */
+    --border-color: #d1d9e0;       /* Subtle borders */
     --white: #FFFFFF;              /* Pure white */
-    --shadow-sm: 0 2px 8px rgba(45, 95, 79, 0.08);
-    --shadow-md: 0 8px 24px rgba(45, 95, 79, 0.12);
-    --shadow-lg: 0 16px 40px rgba(45, 95, 79, 0.15);
+    --shadow-sm: 0 2px 8px rgba(43, 69, 92, 0.08);
+    --shadow-md: 0 8px 24px rgba(43, 69, 92, 0.12);
+    --shadow-lg: 0 16px 40px rgba(43, 69, 92, 0.15);
+    /*--shadow-sm: 0 2px 8px rgba(43, 69, 92, 0.08); */
+    /*--shadow-md: 0 8px 24px rgba(43, 69, 92, 0.12); */
+    /*--shadow-lg: 0 16px 40px rgba(43, 69, 92, 0.15); */
     --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
@@ -311,7 +316,7 @@ button:disabled {
 .hero-image-placeholder svg {
     width: 100%;
     height: auto;
-    filter: drop-shadow(0 10px 30px rgba(45, 95, 79, 0.15));
+    filter: drop-shadow(0 10px 30px rgba(43, 69, 92, 0.15));
 }
 
 @keyframes fadeInUp {
@@ -827,7 +832,7 @@ section {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(45, 95, 79, 0.1);
+    box-shadow: 0 0 0 3px rgba(43, 69, 92, 0.1);
 }
 
 .form-group input::placeholder {
