@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Book your room with Room Rent - Easy online booking form.">
+    <title>Book Now - Room Rent</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/923352838794" class="whatsapp-float" title="Chat with us on WhatsApp" target="_blank" rel="noopener">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-4.947 1.347l-.355.206-.368-.067c-1.264-.23-2.459-.856-3.471-1.876-1.04-1.05-1.65-2.447-1.726-3.966C.098 5.031.751 2.718 2.472 1.265 4.191-.187 6.53.012 8.313 1.422c1.86 1.502 2.91 3.627 2.91 5.98 0 .213-.005.426-.014.636.945.324 1.856.773 2.703 1.326l.328.206.36-.065c1.404-.253 2.744-.108 3.97.567 1.239.681 2.265 1.865 2.82 3.257.556 1.392.414 3.04-.405 4.405-1.045 1.676-2.684 2.754-4.614 2.754-1.076 0-2.088-.29-3.01-.842l-.33-.196-.347.06c-1.447.26-2.805.05-4.06-.607Z"/>
+        </svg>
+    </a>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <a href="index.html" class="logo">
+                        <!-- <span class="logo-icon">🏠</span>
+                        <span class="logo-text">Room Rent</span> -->
+                        <img src="images/logo.jpg" alt="Room Rent Logo" class="logo-image" style="width: 80px; height: auto;">
+                    </a>
+
+                    <button class="hamburger" id="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+
+                    <nav class="nav-menu" id="navMenu">
+                        <a href="index.html" class="nav-link">Home</a>
+                        <a href="branches.html" class="nav-link">Branches</a>
+                        <a href="rooms.html" class="nav-link">Rooms</a>
+                        <a href="booking.html" class="nav-link active">Booking</a>
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </nav>
+
+                    <a href="tel:03352838794" class="btn-call">📞 Call Now</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1>Book Your Room</h1>
+                <p>Fill in the details below to complete your booking</p>
+            </div>
+        </section>
+
+        <!-- Booking Form -->
+        <section class="booking-section">
+            <div class="container">
+                <div class="booking-form-wrapper">
+                    <form id="bookingForm" class="booking-form">
+                        <div class="form-success" id="formSuccess">
+                            <div class="success-icon">✓</div>
+                            <h3>Booking Submitted Successfully!</h3>
+                            <p>Our team will contact you shortly to confirm your booking.</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                            <span class="error-message"></span>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" placeholder="03XX-XXXXXXX" required>
+                                <span class="error-message"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="nic">NIC / CNIC *</label>
+                                <input type="text" id="nic" name="nic" placeholder="XXXXX-XXXXXXX-X" required>
+                                <span class="error-message"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="persons">Number of Persons *</label>
+                                <input type="number" id="persons" name="persons" min="1" max="20" value="1" required>
+                                <span class="error-message"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="bookingDate">Booking Date *</label>
+                                <input type="date" id="bookingDate" name="bookingDate" required>
+                                <span class="error-message"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="checkInTime">Check-in Time *</label>
+                                <input type="time" id="checkInTime" name="checkInTime" required>
+                                <span class="error-message"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="checkOutTime">Check-out Time *</label>
+                                <input type="time" id="checkOutTime" name="checkOutTime" required>
+                                <span class="error-message"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="roomType">Room Type *</label>
+                                <select id="roomType" name="roomType" required>
+                                    <option value="">Select Room Type</option>
+                                    <option value="single">Single Bedroom</option>
+                                    <option value="double">Double Bedroom</option>
+                                    <option value="three">3 Bedroom</option>
+                                </select>
+                                <span class="error-message"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="branch">Branch *</label>
+                                <select id="branch" name="branch" required>
+                                    <option value="">Select Branch</option>
+                                    <option value="gulshan-iqbal">Gulshan-e-Iqbal</option>
+                                    <option value="gulshan-johar">Gulshan-e-Johar</option>
+                                    <option value="dha">DHA</option>
+                                </select>
+                                <span class="error-message"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reference">Reference (Optional)</label>
+                            <input type="text" id="reference" name="reference" placeholder="How did you hear about us?">
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Submit Booking</button>
+                            <a href="https://wa.me/923352838794?text=Hi%20Room%20Rent!%20I%27m%20interested%20in%20booking%20a%20room." class="btn btn-whatsapp" target="_blank">
+                                💬 Contact via WhatsApp
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <!-- <h4>Room Rent</h4> -->
+                    <img src="images/logo.jpg" alt="Room Rent Logo" class="logo-image" style="width: 80px; height: auto;">
+                    <p>Premium room rental service in Karachi</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="branches.html">Branches</a></li>
+                        <li><a href="rooms.html">Rooms</a></li>
+                        <li><a href="booking.html">Booking</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>📞 <a href="tel:03352838794">0335-2838-794</a></p>
+                    <p>💬 <a href="https://wa.me/923352838794" target="_blank">WhatsApp</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Room Rent. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTop" class="scroll-top" aria-label="Scroll to top">↑</button>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

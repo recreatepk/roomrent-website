@@ -36,13 +36,13 @@ const appData = {
             capacity: '2-3 persons',
             price: 'PKR 3,500 - 4,500',
             emoji: '🛏️',
+            features: ['AC', 'WiFi', 'Attached Bathroom', 'Kitchen'],
             images: [
                 { src: 'images/rooms/single/room-img1.jpg', description: 'Single bed room view' },
                 { src: 'images/rooms/single/room-img2.jpg', description: 'Attached bathroom' },
                 { src: 'images/rooms/single/room-img3.jpg', description: 'Kitchenette' },
                 { src: 'images/rooms/single/room-img4.jpg', description: 'TV area' }
-            ],
-            features: ['AC', 'WiFi', 'Attached Bathroom', 'Kitchen']
+            ]
         },
         {
             id: 'double',
@@ -51,13 +51,13 @@ const appData = {
             capacity: '4-5 persons',
             price: 'PKR 5,500 - 7,500',
             emoji: '🛏️🛏️',
+            features: ['AC', 'WiFi', 'Attached Bathroom', 'Kitchen', 'Balcony'],
             images: [
-                { src: 'images/rooms/double/room-img5.jpg', description: 'Double bedroom view' },
-                { src: 'images/rooms/double/room-img6.jpg', description: 'Modern bathroom' },
-                { src: 'images/rooms/double/room-img7.jpg', description: 'Family room' },
-                { src: 'images/rooms/double/room-img8.jpg', description: 'Balcony view' }
-            ],
-            features: ['AC', 'WiFi', 'Attached Bathroom', 'Kitchen', 'Balcony']
+                { emoji: '🛏️🛏️', description: 'Double bedroom view' },
+                { emoji: '🚿', description: 'Modern bathroom' },
+                { emoji: '👨‍👩‍👧‍👦', description: 'Family room' },
+                { emoji: '🌄', description: 'Balcony view' }
+            ]
         },
         {
             id: 'three',
@@ -66,13 +66,13 @@ const appData = {
             capacity: '8-12 persons',
             price: 'PKR 12,000 - 15,000',
             emoji: '🏠',
+            features: ['AC', 'WiFi', '3 Bathrooms', 'Full Kitchen', 'Living Area', 'Parking'],
             images: [
-                { src: 'images/rooms/three/room-img9.jpg', description: '3-bedroom apartment' },
-                { src: 'images/rooms/three/room-img10.jpg', description: 'Living room' },
-                { src: 'images/rooms/three/room-img11.jpg', description: 'Full kitchen' },
-                { src: 'images/rooms/three/room-img12.jpg', description: 'Parking facility' }
-            ],
-            features: ['AC', 'WiFi', '3 Bathrooms', 'Full Kitchen', 'Living Area', 'Parking']
+                { emoji: '🏠', description: '3-bedroom apartment' },
+                { emoji: '🛋️', description: 'Living room' },
+                { emoji: '🍽️', description: 'Full kitchen' },
+                { emoji: '🚘', description: 'Parking facility' }
+            ]
         }
     ]
 };
@@ -206,12 +206,12 @@ function initRoomDetailsPage() {
     wrapper.innerHTML = `
         <div class="gallery-container">
             <div class="gallery-main" id="galleryMain" onclick="openLightbox(0)">
-                <img src="${room.images[0].src}" alt="${room.images[0].description}" class="gallery-image">
+                ${room.images[0].emoji}
             </div>
             <div class="gallery-thumbnails">
                 ${room.images.map((img, idx) => `
                     <div class="gallery-thumb ${idx === 0 ? 'active' : ''}" onclick="changeImage(${idx})">
-                        <img src="${img.src}" alt="${img.description}" class="thumb-image">
+                        ${img.emoji}
                     </div>
                 `).join('')}
             </div>
@@ -222,7 +222,7 @@ function initRoomDetailsPage() {
             <p class="room-details-subtitle">${room.description}</p>
 
             <div style="margin-bottom: 2rem;">
-                <h3 style="color: var(--primary); margin-bottom: 1rem;"> (Amenities)</h3>
+                <h3 style="color: var(--primary); margin-bottom: 1rem;">সুविধাएँ (Amenities)</h3>
                 <div class="room-features-list">
                     ${room.features.map(feature => `
                         <div class="feature-item">${feature}</div>
@@ -259,9 +259,7 @@ function changeImage(index) {
     const room = window.currentRoom;
     
     if (gallery && room) {
-        const img = gallery.querySelector('.gallery-image');
-        img.src = room.images[index].src;
-        img.alt = room.images[index].description;
+        gallery.textContent = room.images[index].emoji;
     }
 
     // Update active thumbnail
@@ -276,8 +274,8 @@ function openLightbox(index) {
     
     if (lightbox && room) {
         window.currentImageIndex = index;
-        img.src = room.images[index].src;
-        img.alt = room.images[index].description;
+        img.textContent = room.images[index].emoji;
+        img.style.fontSize = '10rem';
         lightbox.classList.add('show');
     }
 }

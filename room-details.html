@@ -3,12 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Room Rent - Premium room rental service in Karachi. Book family rooms and party venues. Available 24/7.">
-    <meta name="keywords" content="room rental, Karachi, family rooms, party venues, accommodation">
-    <meta name="author" content="Room Rent">
-    
-    <title>Room Rent - Premium Room Rental Service in Karachi</title>
-    
+    <meta name="description" content="Room Details - Room Rent">
+    <title>Room Details - Room Rent</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,7 +36,7 @@
                     </button>
 
                     <nav class="nav-menu" id="navMenu">
-                        <a href="index.html" class="nav-link active">Home</a>
+                        <a href="index.html" class="nav-link">Home</a>
                         <a href="branches.html" class="nav-link">Branches</a>
                         <a href="rooms.html" class="nav-link">Rooms</a>
                         <a href="booking.html" class="nav-link">Booking</a>
@@ -53,81 +49,30 @@
         </nav>
     </header>
 
-    <!-- Main Content -->
     <main>
-        <!-- Hero Section -->
-        <section class="hero">
+        <!-- Room Details Section -->
+        <section class="room-details-section">
             <div class="container">
-                <div class="hero-content">
-                    <h1 class="hero-title">Rooms Available for Families and Birthday Party Celebrations</h1>
-                    <p class="hero-subtitle">Call us Now For Booking 24/7: <strong>0335-2838-794</strong></p>
-                    <div class="hero-buttons">
-                        <a href="branches.html" class="btn btn-primary">View Branches</a>
-                        <a href="booking.html" class="btn btn-secondary">Book Now</a>
-                    </div>
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a> / <a href="rooms.html">Rooms</a> / <span id="roomBreadcrumb">Room Details</span>
                 </div>
-                <div class="hero-image">
-                    <div class="hero-placeholder">
-                        <svg viewBox="0 0 400 350" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="400" height="350" fill="#f0f4f8"/>
-                            <rect x="50" y="80" width="120" height="160" fill="#2578bb" rx="8"/>
-                            <rect x="190" y="80" width="120" height="160" fill="#2578bb" rx="8"/>
-                            <rect x="330" y="80" width="20" height="160" fill="#2e73b6" rx="4"/>
-                            <circle cx="110" cy="140" r="25" fill="#ff6b6b" opacity="0.3"/>
-                            <circle cx="250" cy="140" r="25" fill="#4ecdc4" opacity="0.3"/>
-                            <rect x="50" y="260" width="300" height="50" fill="#33332e" rx="6"/>
-                            <rect x="70" y="275" width="30" height="20" fill="#f0f4f8"/>
-                            <rect x="120" y="275" width="30" height="20" fill="#f0f4f8"/>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Branches Preview Section -->
-        <section class="branches-preview">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Our Branches</h2>
-                    <p>Conveniently located across Karachi</p>
-                </div>
-                <div class="branches-grid" id="branchesGrid">
+                <div class="room-details-wrapper" id="roomDetailsWrapper">
                     <!-- Populated by JavaScript -->
-                </div>
-                <div class="section-cta">
-                    <a href="branches.html" class="btn btn-outline">View All Branches →</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Features Section -->
-        <section class="features">
-            <div class="container">
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">🏢</div>
-                        <h3>Multiple Locations</h3>
-                        <p>Available in premium areas across Karachi</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🛏️</div>
-                        <h3>Various Room Types</h3>
-                        <p>Single, Double, and 3-Bedroom options</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">⚡</div>
-                        <h3>Modern Amenities</h3>
-                        <p>WiFi, AC, Cooking facilities & more</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">📞</div>
-                        <h3>24/7 Support</h3>
-                        <p>Round-the-clock customer service</p>
-                    </div>
                 </div>
             </div>
         </section>
     </main>
+
+    <!-- Image Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close">&times;</button>
+            <img id="lightboxImage" src="" alt="Room image" class="lightbox-image">
+            <button class="lightbox-prev" id="lightboxPrev">❮</button>
+            <button class="lightbox-next" id="lightboxNext">❯</button>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
