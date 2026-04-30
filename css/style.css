@@ -922,6 +922,56 @@ a:hover {
     color: rgba(255, 255, 255, 0.6);
 }
 
+/* ===== Visitor Counter ===== */
+.visitor-counter {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+.visitor-counter:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.visitor-count {
+    font-weight: 700;
+    color: var(--white);
+    font-size: 1.1rem;
+    font-family: 'Courier New', monospace;
+    display: inline-block;
+    min-width: 50px;
+    text-align: center;
+    padding: 0 0.5rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    animation: counterPulse 0.5s ease-out;
+}
+
+@keyframes counterPulse {
+    0% {
+        transform: scale(1);
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+    50% {
+        transform: scale(1.1);
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+    100% {
+        transform: scale(1);
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+}
+
+.visitor-count.pulse-animation {
+    animation: counterPulse 0.5s ease-out;
+}
+
 /* ===== WhatsApp Button ===== */
 .whatsapp-float {
     position: fixed;

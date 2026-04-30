@@ -603,6 +603,48 @@ function initPage() {
     }
 }
 
+// ===== Visitor Counter =====
+function initVisitorCounter() {
+    // Get or initialize visitor count from localStorage
+    const visitorCountElement = $('#visitorCount');
+    if (!visitorCountElement) return;
+
+    // Get current count from localStorage
+    let visitorCount = localStorage.getItem('roomRentVisitorCount');
+    
+    // If no count exists, start at 0
+    if (visitorCount === null) {
+        visitorCount = 0;
+    } else {
+        visitorCount = parseInt(visitorCount);
+    }
+
+    // Check if this is a new visit (new session)
+    const sessionId = sessionStorage.getItem('roomRentSessionId');
+    
+    if (!sessionId) {
+        // This is a new visitor/new session
+        visitorCount++;
+        localStorage.setItem('roomRentVisitorCount', visitorCount);
+        
+        // Mark this session as recorded
+        const newSessionId = 'session_' + Date.now() + '_' + Math.random();
+        sessionStorage.setItem('roomRentSessionId', newSessionId);
+        
+        // Log the visit
+        console.log('🎉 New visitor detected! Total visitors: ' + visitorCount);
+    }
+
+    // Display the current visitor count
+    visitorCountElement.textContent = visitorCount;
+    
+    // Trigger pulse animation
+    visitorCountElement.classList.remove('pulse-animation');
+    // Force reflow to restart animation
+    void visitorCountElement.offsetWidth;
+    visitorCountElement.classList.add('pulse-animation');
+}
+
 // ===== DOM Ready =====
 document.addEventListener('DOMContentLoaded', initPage);
 
