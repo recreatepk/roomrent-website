@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact Room Rent - Get in touch with us for any inquiries.">
-    <title>Contact Us - Room Rent</title>
+    <meta name="description" content="Book your room with Room Rent - Easy online booking form.">
+    <title>Book Now - Room Rent</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,8 +39,8 @@
                         <a href="index.html" class="nav-link">Home</a>
                         <a href="branches.html" class="nav-link">Branches</a>
                         <a href="rooms.html" class="nav-link">Rooms</a>
-                        <a href="booking.html" class="nav-link">Booking</a>
-                        <a href="contact.html" class="nav-link active">Contact</a>
+                        <a href="booking.html" class="nav-link active">Booking</a>
+                        <a href="contact.html" class="nav-link">Contact</a>
                     </nav>
 
                     <a href="tel:03352838794" class="btn-call">📞 Call Now</a>
@@ -53,83 +53,102 @@
         <!-- Page Header -->
         <section class="page-header">
             <div class="container">
-                <h1>Contact Us</h1>
-                <p>Get in touch with our friendly team</p>
+                <h1>Book Your Room</h1>
+                <p>Fill in the details below to complete your booking</p>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section class="contact-section">
+        <!-- Booking Form -->
+        <section class="booking-section">
             <div class="container">
-                <div class="contact-wrapper">
-                    <div class="contact-info">
-                        <div class="contact-card">
-                            <div class="contact-icon">📞</div>
-                            <h3>Phone</h3>
-                            <p><a href="tel:03352838794">0335-2838-794</a></p>
-                            <p class="contact-detail">Available 24/7</p>
+                <div class="booking-form-wrapper">
+                    <form id="bookingForm" class="booking-form">
+                        <div class="form-success" id="formSuccess">
+                            <div class="success-icon">✓</div>
+                            <h3>Booking Submitted Successfully!</h3>
+                            <p>Our team will contact you shortly to confirm your booking.</p>
                         </div>
 
-                        <div class="contact-card">
-                            <div class="contact-icon">💬</div>
-                            <h3>WhatsApp</h3>
-                            <p><a href="https://wa.me/923352838794" target="_blank">Message Us</a></p>
-                            <p class="contact-detail">Quick Response</p>
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                            <span class="error-message"></span>
                         </div>
 
-                        <div class="contact-card">
-                            <div class="contact-icon">📍</div>
-                            <h3>Locations</h3>
-                            <ul class="branch-list">
-                                <li>Gulshan-e-Iqbal</li>
-                                <li>Gulshan-e-Johar</li>
-                                <li>DHA</li>
-                            </ul>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" placeholder="03XX-XXXXXXX" required>
+                                <span class="error-message"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="nic">NIC / CNIC *</label>
+                                <input type="text" id="nic" name="nic" placeholder="XXXXX-XXXXXXX-X" required>
+                                <span class="error-message"></span>
+                            </div>
                         </div>
 
-                        <div class="contact-card">
-                            <div class="contact-icon">⏰</div>
-                            <h3>Hours</h3>
-                            <p>Open 24/7</p>
-                            <p class="contact-detail">All days of the week</p>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="persons">Number of Persons *</label>
+                                <input type="number" id="persons" name="persons" min="1" max="20" value="1" required>
+                                <span class="error-message"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="bookingDate">Booking Date *</label>
+                                <input type="date" id="bookingDate" name="bookingDate" required>
+                                <span class="error-message"></span>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="contact-form-wrapper">
-                        <h2>Send us a Message</h2>
-                        <form id="contactForm" class="contact-form">
-                            <div class="form-success" id="contactSuccess">
-                                <div class="success-icon">✓</div>
-                                <p>Thank you! We'll get back to you soon.</p>
-                            </div>
-
+                        <div class="form-row">
                             <div class="form-group">
-                                <label for="contactName">Your Name *</label>
-                                <input type="text" id="contactName" name="contactName" placeholder="Enter your name" required>
+                                <label for="checkInTime">Check-in Time *</label>
+                                <input type="time" id="checkInTime" name="checkInTime" required>
                                 <span class="error-message"></span>
                             </div>
-
                             <div class="form-group">
-                                <label for="contactEmail">Email Address *</label>
-                                <input type="email" id="contactEmail" name="contactEmail" placeholder="your@email.com" required>
+                                <label for="checkOutTime">Check-out Time *</label>
+                                <input type="time" id="checkOutTime" name="checkOutTime" required>
                                 <span class="error-message"></span>
                             </div>
+                        </div>
 
+                        <div class="form-row">
                             <div class="form-group">
-                                <label for="contactPhone">Phone Number *</label>
-                                <input type="tel" id="contactPhone" name="contactPhone" placeholder="03XX-XXXXXXX" required>
+                                <label for="roomType">Room Type *</label>
+                                <select id="roomType" name="roomType" required>
+                                    <option value="">Select Room Type</option>
+                                    <option value="single">Single Bedroom</option>
+                                    <option value="double">Double Bedroom</option>
+                                    <option value="three">3 Bedroom</option>
+                                </select>
                                 <span class="error-message"></span>
                             </div>
-
                             <div class="form-group">
-                                <label for="contactMessage">Message *</label>
-                                <textarea id="contactMessage" name="contactMessage" rows="5" placeholder="Tell us how we can help..." required></textarea>
+                                <label for="branch">Branch *</label>
+                                <select id="branch" name="branch" required>
+                                    <option value="">Select Branch</option>
+                                    <option value="gulshan-iqbal">Gulshan-e-Iqbal</option>
+                                    <option value="gulshan-johar">Gulshan-e-Johar</option>
+                                    <option value="dha">DHA</option>
+                                </select>
                                 <span class="error-message"></span>
                             </div>
+                        </div>
 
-                            <button type="submit" class="btn btn-primary">Send Message</button>
-                        </form>
-                    </div>
+                        <div class="form-group">
+                            <label for="reference">Reference (Optional)</label>
+                            <input type="text" id="reference" name="reference" placeholder="How did you hear about us?">
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Submit Booking</button>
+                            <a href="https://wa.me/923352838794?text=Hi%20Room%20Rent!%20I%27m%20interested%20in%20booking%20a%20room." class="btn btn-whatsapp" target="_blank">
+                                💬 Contact via WhatsApp
+                            </a>
+                        </div>
+                    </form>
                 </div>
             </div>
         </section>
@@ -173,7 +192,7 @@
     <button id="scrollTop" class="scroll-top" aria-label="Scroll to top">↑</button>
 
     <script src="js/script.js"></script>
-    <script src="js/visitor-counter.js"></script>
+	<script src="js/visitor-counter.js"></script>
     <script src="js/tawkto.js"></script>
 </body>
 </html>

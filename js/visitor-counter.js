@@ -1,32 +1,26 @@
+// ===== Server-side Visitor Counter =====
 function initVisitorCounter() {
     const visitorCountElement = document.getElementById('visitorCount');
     if (!visitorCountElement) return;
 
-    let visitorCount = localStorage.getItem('roomRentVisitorCount');
+    fetch('api/visitor-counter.php', {
+        method: 'GET',
+        cache: 'no-store',
+        credentials: 'same-origin'
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (!data.success) return;
 
-    if (visitorCount === null) {
-        visitorCount = 0;
-    } else {
-        visitorCount = parseInt(visitorCount);
-    }
+            visitorCountElement.textContent = data.count;
 
-    const sessionId = sessionStorage.getItem('roomRentSessionId');
-
-    if (!sessionId) {
-        visitorCount++;
-        localStorage.setItem('roomRentVisitorCount', visitorCount);
-
-        const newSessionId = 'session_' + Date.now() + '_' + Math.random();
-        sessionStorage.setItem('roomRentSessionId', newSessionId);
-
-        console.log('New visitor detected! Total visitors: ' + visitorCount);
-    }
-
-    visitorCountElement.textContent = visitorCount;
-
-    visitorCountElement.classList.remove('pulse-animation');
-    void visitorCountElement.offsetWidth;
-    visitorCountElement.classList.add('pulse-animation');
+            visitorCountElement.classList.remove('pulse-animation');
+            void visitorCountElement.offsetWidth;
+            visitorCountElement.classList.add('pulse-animation');
+        })
+        .catch(error => {
+            console.error('Visitor counter error:', error);
+        });
 }
 
 document.addEventListener('DOMContentLoaded', initVisitorCounter);
